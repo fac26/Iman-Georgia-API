@@ -2,9 +2,77 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Play', sans-serif;
+  font-family: 'Play', sans-serif; 
 }
 
+.glitch{
+  font-size: 40px;
+animation: glitch 1s linear infinite;
+text-shadow:
+    0 0 7px rgb(206, 213, 215),
+    0 0 10px rgb(14, 38, 47),
+    /* 0 0 21px #fff, */
+    /* 0 0 42px rgb(11, 23, 27),
+    0 0 82px rgb(11, 23, 27),
+    0 0 92px rgb(11, 23, 27),
+    0 0 102px rgb(11, 23, 27), */
+    0 0 151px rgb(0, 149, 255);
+}
+
+@keyframes glitch{
+2%,64%{
+  transform: translate(2px,0) skew(0deg);
+}
+4%,60%{
+  transform: translate(-2px,0) skew(0deg);
+}
+62%{
+  transform: translate(0,0) skew(5deg); 
+}
+}
+
+div:before,
+div:after{
+content: attr(title);
+position: absolute;
+left: 0;
+}
+
+div:before{
+animation: glitchTop 1s linear infinite;
+clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+-webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+@keyframes glitchTop{
+2%,64%{
+  transform: translate(2px,-2px);
+}
+4%,60%{
+  transform: translate(-2px,2px);
+}
+62%{
+  transform: translate(13px,-1px) skew(-13deg); 
+}
+}
+
+div:after{
+animation: glitchBotom 1.5s linear infinite;
+clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+-webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+@keyframes glitchBotom{
+2%,64%{
+  transform: translate(-2px,0);
+}
+4%,60%{
+  transform: translate(-2px,0);
+}
+62%{
+  transform: translate(-22px,5px) skew(21deg); 
+}
+}
 
 /*  Main search page */
 #header{
@@ -23,7 +91,11 @@
   letter-spacing: 0.2rem; 
 }
 #search-hub{
-  background: linear-gradient(45deg, rgba(30, 13, 211, 0.915),rgba(228, 106, 5, 0.915));
+  background-image: url(/marvel.jpg);
+  -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -39,16 +111,20 @@
   font-size: 1.3rem;
   padding: 1rem 0.8rem;
   border-radius: 1rem 0rem 0rem 1rem;
-  background: rgb(207, 207, 207);
   outline: none;
   border: none;
+  border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+    width: 280px;
+    height: 30px;
+    border-radius: 15%;
 }
 #search:focus{
   background: rgb(233, 233, 233);
 }
 #btn{
   font-size: 1.3rem;
-  padding: 1rem 1rem;
+  padding: 0.4rem 1rem;
   border-radius: 0rem 1rem 1rem 0rem;
   outline: none;
   border: none;
@@ -67,18 +143,19 @@
   animation-duration: 4s;
 }
 @keyframes button-ani {
-  from {background-color: rgba(30, 13, 211, 0.915);}
-  to {background-color: rgba(228, 106, 5, 0.915);}
+  from {background-color: rgba(32, 86, 156, 0.915);}
+  to {background-color: rgba(5, 109, 228, 0.915);}
 }
 
 
 /* Search results */
 #results-hub{
   display: none;
-  background: rgb(232, 231, 231);
+  background: black
+  
 }
 #movie-name{
-  background: linear-gradient(45deg, rgba(30, 13, 211, 0.915),rgba(228, 106, 5, 0.915));
+  background: transparent
   color: white;
   font-size: larger;
   padding: 1rem 1rem;
@@ -130,7 +207,7 @@
   
 }
 #results-hub p{
-  background: linear-gradient(45deg, rgba(30, 13, 211, 0.915),rgba(228, 106, 5, 0.915));
+  background: rgb(37, 93, 183);
   color: #fff;
   font-weight: 300;
   margin-top: -0.4rem;
@@ -150,7 +227,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(226,226,226);
+  background: black;
   
   display: none;
   justify-content: center;
@@ -162,6 +239,7 @@
   padding: 2rem;
   font-size: 1.5rem;
   background: white;
+  border-radius: 10%;
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -171,7 +249,7 @@
   border-radius: 0;
   outline: none;
   border: none;
-  background: linear-gradient(45deg, rgba(30, 13, 211, 0.915),rgba(228, 106, 5, 0.915));
+  background: rgb(38, 105, 193);
   color: white;
   margin-top: 3rem;
   cursor: pointer;

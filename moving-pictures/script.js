@@ -15,7 +15,8 @@ const searchTitle = document.getElementById('search-title');
 const message = document.getElementById('message');
 const filmInfoPanel = document.getElementById('film-info-panel');
 const panelName = document.getElementById('panel-name');
-const title = document.getElementById('title');
+const title = localStorage.getItem("herokey") || '';
+// document.getElementById('title');
 const language = document.getElementById('language');
 const rating = document.getElementById('rating');
 const date = document.getElementById('date');
@@ -23,6 +24,12 @@ const img = document.getElementById('panel-img');
 const description = document.getElementById('description');
 const body = document.getElementById('body');
 
+if(title){
+    searchTitle.innerText = `showing results for "${title}"`;
+    showMovies(searchApi+title);
+    search.value = ""
+}
+console.log(title);
 form.addEventListener('submit',(e)=>{
     e.preventDefault();
     handleEvents();
@@ -32,17 +39,17 @@ function handleEvents(){
     if(window.navigator.onLine){
         resultsHub.style.display = "block";
         searchHub.style.display = "none";
-        const title = search.value;
+        //const title = search.value;
         if(title){
             searchTitle.innerText = `showing results for "${title}"`;
             showMovies(searchApi+title);
-            search.value = ""
+            search.value = "";
         }
         else{
             searchTitle.innerText = `no results rendered`;
             searchHub.style.display = "none";
             unsuccessPanel.style.display = "flex";
-            message.innerHTML = `You didn't enter anything! What about "star wars"?`
+            message.innerHTML = `INFORMATION NOT FOUND. PLEASE RE-ENTER`
         }
     }
     else{
@@ -86,7 +93,7 @@ function showDetails(element){
     title.innerHTML = `${element.title}`;
     panelName.innerHTML = `${element.title}`;
     date.innerHTML = `${element.release_date}`;
-    rating.innerHTML = `${element.vote_average}`;
+    // rating.innerHTML = `${element.vote_average}`;
     description.innerHTML = `${element.overview}`;
     language.innerHTML = `${element.original_language}`
 }
@@ -99,3 +106,5 @@ function handleClose(){
     filmInfoPanel.style.display = "none";
     body.style.overflow = "auto"
 }
+
+//awaiting fetch - maybe wait til first API runs first then second API? And then merge everything together so you stick to one search page
