@@ -1,29 +1,45 @@
-So the idea so far:
--Marvel API
--Search superhero database 
--The story: you could be an agent of SHIELD or a villain 
-and you want to find out more information about each character
--like their strenghts and weaknesses 
--put a cool background effect and music to pretend you have hacked into the system
+# Iman and Georgia's HTTP Project
 
-Public key we will be using:
-509766793c55d7eb72c977e1397d66f1
+---
 
-Private key:
-74d9d52b69a9745e9972bfcc16060a71ae190f6b
+## Marvel and Films hackesque site
 
-Rate limit:
-3000 calls/day
+### Aims
 
-Authorized referrers:
-developer.marvel.com
+We decided to combine the Marvel API and the TMDB API to create a site that you 'hack' into to access the data. 
 
-Note: List the domain and path only - don't include "http" or other scheme designations. Only use the characters a-z, 0-9, ., _, -, and *.
+From here you can 'fetch' the data of all your favourite Marvel characters, as well as the movies and then their feature character films. 
 
-https://developer.marvel.com/documentation/authorization
+### Progress
 
-Marvel background music
+The Marvel API is complex to work with without a backend, so we have explored the use of Md5 to keep keys secure. 
 
-We need two APIs so we will have a voice over-just like ultron
+As a buffer, we created a generic films and television fetch using the TMDB API in a section called 'Moving Pictures'.
 
-The comics will act as 'news articles' to know more about them
+We are currently working on better connecting the two, as the Moving Pictures site works on switching between one page that renders the display on and off for searching to create a more seamless experience for the user. However, this has posed problems in connecting the two APIs more seamlessly. 
+
+---
+
+## How to explore the files
+
+To view a live deplyment of the moving pictures element go [here](https://)
+
+The files which are working are currently in the <code>main</code> branch. 
+
+1. Clone the repo
+2. Select the <code>moving-pictures</code> folder
+3. The live view is of <code>index.html</code> from within this folder. 
+
+### How Moving Pictures works
+
+1. Enter a film or tv programme to search
+2. Click search or press Enter on your keyboard to reveal the results
+3. Select a film to open a panel revealing more detail
+
+---
+
+## Notes on Accessibility
+
+The site is not yet as accessible as we would like. There are improvements to be made on navigation and explorations to made on rendering alt-text for a plethora of unknown results. 
+
+
