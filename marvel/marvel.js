@@ -5,6 +5,7 @@ function heroinfo() {
     var marvelPrivateKey = '74d9d52b69a9745e9972bfcc16060a71ae190f6b';
 
     var name = document.getElementById('Name').value; //when button pressed ofc
+    localStorage.setItem("herokey", name);
 
     var marvelApiStart = "https://gateway.marvel.com:443/v1/public/characters?apikey=";
 
