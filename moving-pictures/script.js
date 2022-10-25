@@ -42,7 +42,7 @@ function handleEvents(){
             searchTitle.innerText = `no results rendered`;
             searchHub.style.display = "none";
             unsuccessPanel.style.display = "flex";
-            message.innerHTML = `You didn't enter anything! What about "star wars"?`
+            message.innerHTML = `INFORMATION NOT FOUND. PLEASE RE-ENTER`
         }
     }
     else{
@@ -86,7 +86,7 @@ function showDetails(element){
     title.innerHTML = `${element.title}`;
     panelName.innerHTML = `${element.title}`;
     date.innerHTML = `${element.release_date}`;
-    rating.innerHTML = `${element.vote_average}`;
+    // rating.innerHTML = `${element.vote_average}`;
     description.innerHTML = `${element.overview}`;
     language.innerHTML = `${element.original_language}`
 }

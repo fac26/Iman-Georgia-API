@@ -58,17 +58,22 @@ function heroinfo() {
         
         hn.appendChild(nome);
         hd.appendChild(description);
-        hd.appendChild(thumbnail); //to add image
+        // hd.appendChild(thumbnail); //to add image
         count++;
         //ok will probs use film API then for the pictures
         //next steps: just implement search bar and add spaces between
         console.log(count)
+        
     }
     );
 }
 
+function showDiv() {
+    document.getElementById("info").style.display ="block";
+}
 
-
-
-
-    
+function passvalues() {
+    var name = document.getElementById('Name').value;
+    localStorage.setItem("textvalue",name);
+    return false;
+}
