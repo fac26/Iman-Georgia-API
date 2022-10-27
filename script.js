@@ -25,6 +25,8 @@ const description = document.getElementById('description');
 const body = document.getElementById('body');
 
 if(title){
+    resultsHub.style.display = "block";
+    searchHub.style.display = "none";
     searchTitle.innerText = `showing results for "${title}"`;
     showMovies(searchApi+title);
     search.value = ""
@@ -99,7 +101,7 @@ function showDetails(element){
 }
 
 function handleBack(){
-    location.reload();
+    history.back()
 }
 
 function handleClose(){
