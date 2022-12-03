@@ -22,7 +22,7 @@ We are currently working on better connecting the two, as the Moving Pictures si
 
 ## How to explore the files
 
-To view a live deplyment of the moving pictures element go [here](https://fac26.github.io/Iman-Georgia-API/moving-pictures/index.html)
+To view a live deplyment of the moving pictures element go [here](https://fac26.github.io/Iman-Georgia-API/)
 
 The files which are working are currently in the <code>main</code> branch. 
 
